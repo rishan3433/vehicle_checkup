@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "368817648784",
+    "project_id": "haya-vehicle-check-up",
+    "storage_bucket": "haya-vehicle-check-up.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368817648784:android:f16ece0a8b2b7942ca5415",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoH6aNJyFcxdihjw_Nch8cBGh23zBCwfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368817648784:android:70702c1d59403fe6ca5415",
+        "android_client_info": {
+          "package_name": "com.example.hayavehiclecheckup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoH6aNJyFcxdihjw_Nch8cBGh23zBCwfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368817648784:android:10f445f7763f181eca5415",
+        "android_client_info": {
+          "package_name": "com.example.vehicle_checkup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoH6aNJyFcxdihjw_Nch8cBGh23zBCwfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
