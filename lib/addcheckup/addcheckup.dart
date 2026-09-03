@@ -4,6 +4,7 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:vehicle_checkup/Dashboard/Dashboard.dart';
 import 'package:vehicle_checkup/Dashboard/widgets/appbar.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/Stepney%20Wheel.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/backLight.dart';
@@ -22,7 +23,7 @@ import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/waterservice.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/wheelAlignment.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/wheelspanner.dart';
-import 'package:vehicle_checkup/addcheckup/widgets/wiper_water.dart'; 
+import 'package:vehicle_checkup/addcheckup/widgets/wiper_water.dart';
 import 'package:vehicle_checkup/firebase_options.dart';
 
 void main(List<String> args) async {
@@ -73,7 +74,27 @@ class AaddcheckupStateBody extends State<AddcheckupBody> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(75),
-        child: Appbar(text: widget.vehicleno),
+        child: Container(
+          color: Colors.white,
+          child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8.0,20,0.0,0.0),
+                child: IconButton(onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Dashboard(user: usertype);
+                        },
+                      ),
+                    );
+                }, icon: Icon(Icons.keyboard_arrow_left_rounded,color: Colors.black,size: 46,)),
+              ),
+              Appbar(text: widget.vehicleno),
+            ],
+          ),
+        ),
       ),
       body: SafeArea(
         child: Container(
@@ -360,7 +381,6 @@ class AaddcheckupStateBody extends State<AddcheckupBody> {
       waterServiceFillingDate = TextEditingController();
       wheelAlignmentLast = TextEditingController();
       wheelAlignmentPresent = TextEditingController();
- 
     });
   }
 }

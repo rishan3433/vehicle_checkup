@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:vehicle_checkup/addcheckup/widgets/values.dart'; 
+import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/image/imageshower.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/danger.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/good.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/needles/imageviewer.dart';
 
 IconData engine_colour_compartment = Icons.keyboard_arrow_down_rounded;
 bool engineoilcolorvisibility = false;
+bool photoarea = false;
+bool selectionarea = true;
+String textdata = 'Show Image';
 
 class ViewEngineoilcolor extends StatefulWidget {
   const ViewEngineoilcolor({super.key});
@@ -77,48 +82,69 @@ class VviewEngineoilcolorState extends State<ViewEngineoilcolor> {
                 padding: EdgeInsetsGeometry.all(15),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            shape: BoxShape.circle,
+                    Visibility(
+                      visible: selectionarea,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Goodneedleview(value: preengineoilcolour1),
+                            ],
                           ),
-                        ),
-                        Goodneedleview(value: preengineoilcolour1),
-                        
-                      ],
-                    ),
-                    SizedBox(height: 35,),
-                    Row(
-                      children: [
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.grey[850],
-                            shape: BoxShape.circle,
+                          SizedBox(height: 35),
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[850],
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Averageneedleview(value: preengineoilcolour2),
+                            ],
                           ),
-                        ),
-                        Averageneedleview(value: preengineoilcolour2,),
-                      ],
-                    ),
-                    SizedBox(height: 35,),
-                    Row(
-                      children: [
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            shape: BoxShape.circle,
+                          SizedBox(height: 35),
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Dangerneedleview(value: preengineoilcolour3),
+                            ],
                           ),
-                        ),
-                        Dangerneedleview(value: preengineoilcolour3)
-                      ],
+                        ],
+                      ),
                     ),
+                    Visibility(
+                      visible: photoarea,
+                      child: Imageshower(tempfile: preengineoilImage),
+                    ),
+                    TextButton(onPressed: () {
+                      setState(() {
+                        photoarea =!photoarea;
+                        selectionarea =!selectionarea;
+                        if (selectionarea) {
+                          textdata="Show Image";
+                        }else{
+                          textdata="Show Selection";
+                        }
+                      });
+                    }, child: Text(textdata,style: TextStyle(color: Colors.black),)),
                   ],
                 ),
               ),

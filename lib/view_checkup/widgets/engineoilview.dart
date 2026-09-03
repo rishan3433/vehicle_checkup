@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/view_checkup/viewcheckup.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/image/imageshower.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/bad.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/danger.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/good.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/imageviewer.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/verybad.dart';
+
+bool photoarea = false;
+bool selectionarea = true;
+String textdata = 'Show Image';
 
 class Engineoilview extends StatefulWidget {
   const Engineoilview({super.key});
@@ -85,41 +90,42 @@ class _EngineoilviewState extends State<Engineoilview> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Stack(
-                        children: [
-                          Imageviewer(
-                            width: 250,
-                            Image:
-                                "lib/addcheckup/widgets/photos/engineoil.jpg",
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20.0, 0, 0, 0),
-                            child: Column(
-                              children: [
-                                SizedBox(height: 138),
-                                Goodneedleview(value: preengineoillevel1),
-                                SizedBox(height: 5),
-                                Averageneedleview(value: preengineoillevel2),
-                                SizedBox(height: 5),
-                                Badneedleview(value: preengineoillevel3),
-                                SizedBox(height: 5),
-                                VeryBadneedleview(value: preengineoillevel4),
-                                SizedBox(height: 5),
-                                Dangerneedleview(value: preengineoillevel5),
-                                SizedBox(height: 5),
-                              ],
+                      Visibility(
+                        visible: selectionarea,
+                        child: Stack(
+                          children: [
+                            Imageviewer(
+                              width: 250,
+                              Image:
+                                  "lib/addcheckup/widgets/photos/engineoil.jpg",
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(20.0, 0, 0, 0),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 138),
+                                  Goodneedleview(value: preengineoillevel1),
+                                  SizedBox(height: 5),
+                                  Averageneedleview(value: preengineoillevel2),
+                                  SizedBox(height: 5),
+                                  Badneedleview(value: preengineoillevel3),
+                                  SizedBox(height: 5),
+                                  VeryBadneedleview(value: preengineoillevel4),
+                                  SizedBox(height: 5),
+                                  Dangerneedleview(value: preengineoillevel5),
+                                  SizedBox(height: 5),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+                      Visibility(visible: photoarea, child: Imageshower(tempfile: preengineoilImage)),
                       TextButton(
                         onPressed: () {
-                          setState(() {
-                            mainarea = false;
-                            submainarea = true; 
-                          });
+                          setvalues();
                         },
-                        child: Text("View image"),
+                        child: Text(textdata,style: TextStyle(color: Colors.black),),
                       ),
                     ],
                   ),
@@ -130,5 +136,18 @@ class _EngineoilviewState extends State<Engineoilview> {
         ),
       ),
     );
+  }
+
+  void setvalues() {
+    setState(() {
+      selectionarea = !selectionarea;
+      photoarea = !photoarea;
+
+      if (selectionarea) {
+        textdata = "Show Image";
+      } else {
+        textdata = "Show Selection";
+      }
+    });
   }
 }
