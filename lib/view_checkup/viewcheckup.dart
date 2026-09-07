@@ -7,10 +7,12 @@ import 'package:vehicle_checkup/Dashboard/Dashboard.dart';
 import 'package:vehicle_checkup/Dashboard/widgets/appbar.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/firebase_options.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/brakefluid.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/coolantLevel.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/engineoil.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/engineoilcolor.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/wiperwater.dart';
 
 void main(List<String> args) async {
   await WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +20,8 @@ void main(List<String> args) async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(Viewcheckup(documentid: "27-08-2026", vehicleNumber: "KL 32 T 4054"));
+
+  logeduser = "KL 32 W 6490";
 }
 
 class Viewcheckup extends StatefulWidget {
@@ -122,6 +126,8 @@ class _ViewcheckupbodyState extends State<Viewcheckupbody> {
                       ViewEngineoil(),
                       ViewEngineoilcolor(),
                       ViewCoolantlevel(),
+                      ViewWiperWater(),
+                      ViewBrakefluid(),
                     ],
                   ),
                 ),

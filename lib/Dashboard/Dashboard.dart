@@ -214,45 +214,43 @@ class _DashboardbodyState extends State<Dashboardbody> {
     int nextwek = nextserviceweek[index];
     int nextday = nextserviceweekday[index];
 
-    if (currentday >= nextday) {
-      if (currentweek >= nextwek) {
-        addwidget = TextButton(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.black, // Text and icon color
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return Addcheckup(vehicleno: vehiclenumberdue[index]);
-                },
-              ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Container(
-              width: double.infinity,
-              height: 35,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(7)),
-                color: Colors.white,
-              ),
-              child: Center(
-                child: Text(
-                  vehiclenumberdue[index],
-                  style: TextStyle(
-                    fontFamily: "Anton",
-                    fontWeight: FontWeight(900),
-                  ),
+    if (currentweek >= nextwek) {
+      addwidget = TextButton(
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black, // Text and icon color
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Addcheckup(vehicleno: vehiclenumberdue[index]);
+              },
+            ),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Container(
+            width: double.infinity,
+            height: 35,
+            decoration: BoxDecoration(
+              border: Border.all(width: 1),
+              borderRadius: BorderRadius.all(Radius.circular(7)),
+              color: Colors.white,
+            ),
+            child: Center(
+              child: Text(
+                vehiclenumberdue[index],
+                style: TextStyle(
+                  fontFamily: "Anton",
+                  fontWeight: FontWeight(900),
                 ),
               ),
             ),
           ),
-        );
-      }
+        ),
+      );
     }
 
     return addwidget;

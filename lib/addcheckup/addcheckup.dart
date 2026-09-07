@@ -85,7 +85,7 @@ class AaddcheckupStateBody extends State<AddcheckupBody> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return Dashboard(user: usertype);
+                          return Dashboard(user: logeduser);
                         },
                       ),
                     );

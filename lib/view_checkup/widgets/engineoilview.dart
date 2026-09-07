@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/view_checkup/viewcheckup.dart';
@@ -121,12 +122,47 @@ class _EngineoilviewState extends State<Engineoilview> {
                         ),
                       ),
                       Visibility(visible: photoarea, child: Imageshower(tempfile: preengineoilImage)),
-                      TextButton(
-                        onPressed: () {
-                          setvalues();
-                        },
-                        child: Text(textdata,style: TextStyle(color: Colors.black),),
+                      DottedBorder(
+                      options: RoundedRectDottedBorderOptions(
+                        radius: Radius.circular(12),
                       ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll<Color?>(
+                              Colors.amber,
+                            ),
+                            shape: WidgetStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadiusGeometry.all(
+                                  Radius.circular(12),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              selectionarea = !selectionarea;
+                              photoarea = !photoarea;
+
+                              if (selectionarea) {
+                                textdata = "Show Image";
+                              } else {
+                                textdata = "Show Selection";
+                              }
+                            });
+                          },
+                          child: Text(
+                            textdata,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight(800),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                     ],
                   ),
                 ),
