@@ -7,6 +7,7 @@ import 'package:vehicle_checkup/Dashboard/Dashboard.dart';
 import 'package:vehicle_checkup/Dashboard/widgets/appbar.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/firebase_options.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/Batterywater.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/brakefluid.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/coolantLevel.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/engineoil.dart';
@@ -128,6 +129,7 @@ class _ViewcheckupbodyState extends State<Viewcheckupbody> {
                       ViewCoolantlevel(),
                       ViewWiperWater(),
                       ViewBrakefluid(),
+                      ViewBatteryWater(),
                     ],
                   ),
                 ),
