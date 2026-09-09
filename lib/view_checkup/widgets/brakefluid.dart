@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/header/textheader.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/image/imageshower.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/image/selectionImage.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/danger.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/good.dart';
@@ -70,13 +71,7 @@ class _ViewBrakefluidState extends State<ViewBrakefluid> {
                         width: double.infinity,
                         child: Stack(
                           children: [
-                            SizedBox(
-                              height: 200,
-                              width: 150,
-                              child: Image.asset(
-                                "lib/addcheckup/widgets/photos/BrakeFluid.png",
-                              ),
-                            ),
+                            Selectionimage(ImagePath: "lib/addcheckup/widgets/photos/BrakeFluid.png"),
                             Padding(padding: EdgeInsetsGeometry.fromLTRB(70, 0, 0, 0,),child: Column(children: [
                               SizedBox(height: 70,),
                               Goodneedleview(value: prebrakeFluid1),

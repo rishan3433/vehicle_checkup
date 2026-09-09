@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class _ImageshowerState extends State<Imageshower> {
       child: SizedBox(
         height: 200,
         child: widget.tempfile == null
-            ? Visibility(visible: false, child: Text("data"))
+            ? Visibility(visible: false, child: Text("No Image Received"))
             : Image.file(widget.tempfile!),
       ),
     );

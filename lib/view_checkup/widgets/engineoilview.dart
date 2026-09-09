@@ -1,7 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
-import 'package:vehicle_checkup/view_checkup/viewcheckup.dart';
+import 'package:vehicle_checkup/addcheckup/widgets/values.dart'; 
 import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/image/imageshower.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';

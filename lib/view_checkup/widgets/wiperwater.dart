@@ -1,9 +1,9 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/material.dart';
-import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
+import 'package:flutter/material.dart'; 
 import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/header/textheader.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/image/imageshower.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/image/selectionImage.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/bad.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/danger.dart';
@@ -73,12 +73,7 @@ class _ViewWiperWaterState extends State<ViewWiperWater> {
                       visible: selectionarea,
                       child: Stack(
                         children: [
-                          SizedBox(
-                            height: 200,
-                            child: Image.asset(
-                              "lib/addcheckup/widgets/photos/WiperWater.png",
-                            ),
-                          ),
+                          Selectionimage(ImagePath: "lib/addcheckup/widgets/photos/WiperWater.png"),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(80, 0, 0, 0),
                             child: Column(

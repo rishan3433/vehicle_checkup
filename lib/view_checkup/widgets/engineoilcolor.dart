@@ -5,8 +5,7 @@ import 'package:vehicle_checkup/view_checkup/widgets/existing_values.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/image/imageshower.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';
 import 'package:vehicle_checkup/view_checkup/widgets/needles/danger.dart';
-import 'package:vehicle_checkup/view_checkup/widgets/needles/good.dart';
-import 'package:vehicle_checkup/view_checkup/widgets/needles/imageviewer.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/needles/good.dart';  
 
 IconData engine_colour_compartment = Icons.keyboard_arrow_down_rounded;
 bool engineoilcolorvisibility = false;
