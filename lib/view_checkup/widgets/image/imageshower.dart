@@ -21,7 +21,7 @@ class _ImageshowerState extends State<Imageshower> {
       child: SizedBox(
         height: 200,
         child: widget.tempfile == null
-            ? Visibility(visible: false, child: Text("No Image Received"))
+            ? Visibility(visible: true, child: Text("No Image Received"))
             : Image.file(widget.tempfile!),
       ),
     );

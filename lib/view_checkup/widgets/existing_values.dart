@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 
 bool preengineoillevel1 = false;
 bool preengineoillevel2 = false;
@@ -97,3 +97,13 @@ TextEditingController prewheelAlignmentLast = TextEditingController();
 TextEditingController prewheelAlignmentPresent = TextEditingController();
 
 File? showImage;
+
+double getwidthofpadding(BuildContext context) {
+  double width = MediaQuery.sizeOf(context).width;
+
+  width = width * 25;
+
+  width = width / 100;
+
+  return width;
+}
