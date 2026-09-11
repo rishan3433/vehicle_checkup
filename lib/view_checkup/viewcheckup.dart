@@ -246,6 +246,9 @@ class _ViewcheckupbodyState extends State<Viewcheckupbody> {
 
   double? getheight() {
     var height = MediaQuery.heightOf(context);
+
+    print("HEIGHT OF DEVICE : $height");
+    
     return height - 180;
   }
 }

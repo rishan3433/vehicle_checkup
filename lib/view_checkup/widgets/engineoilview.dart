@@ -95,25 +95,25 @@ class _EngineoilviewState extends State<Engineoilview> {
                         child: Stack(
                           children: [
                             Imageviewer(
-                              width: 250,
+                              width: setwidth(),
                               Image:
                                   "lib/addcheckup/widgets/photos/engineoil.jpg",
                             ),
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(20.0, 0, 0, 0),
+                              padding: EdgeInsets.fromLTRB(getPaddingwidth(), 0, 0, 0),
                               child: Column(
                                 children: [
-                                  SizedBox(height: 138),
+                                  SizedBox(height: getheight()),
                                   Goodneedleview(value: preengineoillevel1),
-                                  SizedBox(height: 5),
+                                  SizedBox(height: needleHeightDiff()),
                                   Averageneedleview(value: preengineoillevel2),
-                                  SizedBox(height: 5),
+                                  SizedBox(height: needleHeightDiff()),
                                   Badneedleview(value: preengineoillevel3),
-                                  SizedBox(height: 5),
+                                  SizedBox(height: needleHeightDiff()),
                                   VeryBadneedleview(value: preengineoillevel4),
-                                  SizedBox(height: 5),
+                                  SizedBox(height: needleHeightDiff()),
                                   Dangerneedleview(value: preengineoillevel5),
-                                  SizedBox(height: 5),
+                                  SizedBox(height: needleHeightDiff()),
                                 ],
                               ),
                             ),
@@ -184,5 +184,38 @@ class _EngineoilviewState extends State<Engineoilview> {
         textdata = "Show Selection";
       }
     });
+  }
+
+  double? getheight() {
+    var height = MediaQuery.widthOf(context);
+
+    height = height * 0.359375;
+
+    return height;
+  }
+
+  double? needleHeightDiff() {
+     var height = MediaQuery.heightOf(context);
+
+    height = height * 0.0060096153846154;
+
+    return height;
+  }
+
+  double getPaddingwidth() {
+    var width = MediaQuery.widthOf(context);
+
+    width = width * 0.0520833333;
+
+    return width;
+  }
+
+  double setwidth() {
+    var width = MediaQuery.widthOf(context);
+
+    width = width * 0.6510416666666667;
+
+    return width;
+
   }
 }
