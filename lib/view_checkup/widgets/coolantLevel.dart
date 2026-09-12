@@ -68,7 +68,7 @@ class _ViewCoolantlevelState extends State<ViewCoolantlevel> {
                       child: Stack(
                         children: [
                           Imageviewer(
-                            width: 90,
+                            width: getheight(),
                             Image:
                                 "lib/addcheckup/widgets/photos/CoolantLevel.jpg",
                           ),
@@ -143,5 +143,13 @@ class _ViewCoolantlevelState extends State<ViewCoolantlevel> {
         ),
       ),
     );
+  }
+
+  double getheight() {
+    var width = MediaQuery.heightOf(context);
+
+    width = width * 0.108173077;
+
+    return width;
   }
 }

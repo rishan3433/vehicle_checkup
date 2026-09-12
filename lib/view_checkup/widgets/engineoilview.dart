@@ -98,7 +98,7 @@ class _EngineoilviewState extends State<Engineoilview> {
                               width: setwidth(),
                               Image:
                                   "lib/addcheckup/widgets/photos/engineoil.jpg",
-                            ),
+                            ), 
                             Padding(
                               padding: EdgeInsets.fromLTRB(getPaddingwidth(), 0, 0, 0),
                               child: Column(
@@ -211,9 +211,9 @@ class _EngineoilviewState extends State<Engineoilview> {
   }
 
   double setwidth() {
-    var width = MediaQuery.widthOf(context);
+    var width = MediaQuery.heightOf(context);
 
-    width = width * 0.6510416666666667;
+    width = width * 0.31;
 
     return width;
 
