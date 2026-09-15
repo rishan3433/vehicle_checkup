@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/Needle/average.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/Needle/bad.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/Needle/danger.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/Needle/good.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/Needle/verylow.dart';
 import 'package:vehicle_checkup/addcheckup%20redign/widgets/imagevisible.dart';
-import 'package:vehicle_checkup/addcheckup/addcheckup.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/widgets/values.dart';
+import 'package:vehicle_checkup/view_checkup/widgets/needles/average.dart';
 
 IconData enginelevelicon = Icons.keyboard_arrow_down_rounded;
-bool enginelevelmaincompartment = false;
+bool enginelevelmaincompartment = true;
 
 class EngineOilLevelRedign extends StatefulWidget {
   const EngineOilLevelRedign({super.key});
@@ -82,7 +88,82 @@ class _EngineOilLevelRedignState extends State<EngineOilLevelRedign> {
                             imagepath:
                                 "lib/addcheckup/widgets/photos/engineoil.jpg",
                           ),
-                          
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(getLeft(), getheightadd(), 0, 0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    GoodNeedleAddCheckup(),
+                                    SizedBox(
+                                      height: 5,
+                                      child: Checkbox(
+                                        value: redignengineoillevel1,
+                                        activeColor: Colors.black,
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 3),
+                                Row(
+                                  children: [
+                                    AverageNeedleAddCheckup(),
+                                    SizedBox(
+                                      height: 5,
+                                      child: Checkbox(
+                                        value: redignengineoillevel1,
+                                        activeColor: Colors.black,
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 3),
+                                Row(
+                                  children: [
+                                    LowNeedleAddCheckup(),
+                                    SizedBox(
+                                      height: 5,
+                                      child: Checkbox(
+                                        value: redignengineoillevel1,
+                                        activeColor: Colors.black,
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 3),
+                                Row(
+                                  children: [
+                                    VeryLowNeedleAddCheckup(),
+                                    SizedBox(
+                                      height: 5,
+                                      child: Checkbox(
+                                        value: redignengineoillevel1,
+                                        activeColor: Colors.black,
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 3),
+                                Row(
+                                  children: [
+                                    DangerNeedleAddCheckup(),
+                                    SizedBox(
+                                      height: 5,
+                                      child: Checkbox(
+                                        value: redignengineoillevel1,
+                                        activeColor: Colors.black,
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -98,10 +179,10 @@ class _EngineOilLevelRedignState extends State<EngineOilLevelRedign> {
 
   double? getFontSizee() {
     var width = MediaQuery.widthOf(context);
+    print(width);
+    print(width);
 
     width = width * 0.0651041667;
-
-    print(width);
 
     return width;
   }
@@ -117,9 +198,30 @@ class _EngineOilLevelRedignState extends State<EngineOilLevelRedign> {
   }
 
   double getHeight() {
-    var width = MediaQuery.heightOf(context);
+    var width = MediaQuery.widthOf(context);
 
-    width = width * 0.28;
+    print("height $width");
+
+    width = width * 0.09375;
+
+    return width;
+  }
+
+  double getLeft() {
+    var height = MediaQuery.heightOf(context);
+
+    height = height * 0.02163461538;
+
+    print(height);
+
+    return height;
+  }
+
+  double getheightadd() {
+    var width = MediaQuery.widthOf(context);
+
+    print("height $width");
+    width = width * 0.338;
 
     return width;
   }

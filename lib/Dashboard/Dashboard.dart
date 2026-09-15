@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vehicle_checkup/Dashboard/widgets/due_vehiclelist.dart';
 import 'package:vehicle_checkup/Dashboard/widgets/lastcheckup.dart';
 import 'package:vehicle_checkup/Dashboard/widgets/appbar.dart';
+import 'package:vehicle_checkup/addcheckup%20redign/addCheckupRedesign.dart';
 import 'package:vehicle_checkup/addcheckup/addcheckup.dart';
 import 'package:vehicle_checkup/addcheckup/widgets/values.dart';
 import 'package:vehicle_checkup/firebase_options.dart';
@@ -224,7 +225,7 @@ class _DashboardbodyState extends State<Dashboardbody> {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return Addcheckup(vehicleno: vehiclenumberdue[index]);
+                return Addcheckupredesign(vehicleno: vehiclenumberdue[index]);
               },
             ),
           );
