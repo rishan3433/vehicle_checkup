@@ -105,7 +105,7 @@ class _EngineOilLevelRedignState extends State<EngineOilLevelRedign> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 3),
+                                SizedBox(height: difference()),
                                 Row(
                                   children: [
                                     AverageNeedleAddCheckup(),
@@ -224,5 +224,13 @@ class _EngineOilLevelRedignState extends State<EngineOilLevelRedign> {
     width = width * 0.338;
 
     return width;
+  }
+
+  double? difference() {
+    var height = MediaQuery.heightOf(context);
+
+    height = height *0.00360576923;
+
+    return height;
   }
 }
